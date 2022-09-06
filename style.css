@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+body {
+    background-color: #525252; 
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: radial-gradient(#9bdfff, #009be4);
+    
+   
+}
+
+.road {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: #525252;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: perspective(450px) rotateX(35deg);
+    border: 30px solid red;
+    border-style:  double;
+
+}
+
+.road:before 
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: linear-gradient(90deg, yellow 0%, yellow 75%, #1e1616 75%, #525252 100%);
+    background-size: 150px;
+    animation: animate 0.5s linear infinite;
+
+}
+.car {
+    position: absolute;
+    left: 20%;
+    top: 30%;
+}
+.boys {
+    position: absolute;
+    right: 250px;
+    top: 28%;
+}
+.girl {
+    position: absolute;
+    right: 500px;
+    top: 38%;
+}
+.girl img {
+    transform: scaleX(-1);
+}
+@keyframes animate
+{
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: -150px;
+    }
+    
+}
+.road:after 
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background: #333;
+    bottom: -60px;
+    transform: perspective(500px) rotateX(-25deg);
+}
+.shadow 
+{
+ position: absolute;   
+ bottom: -93px;
+ left: 50%;
+ transform: translateX(-50%);
+ height: 60px;
+ width: 95%;
+ background: linear-gradient(#000, transparent) ;
+opacity: 0.5;
+}
+
